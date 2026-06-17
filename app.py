@@ -3,13 +3,14 @@ import pandas as pd
 import plotly.express as px
 
 # PAGE CONFIG
+
 st.set_page_config(
     page_title="World Population Intelligence Platform",
     page_icon="🌍",
     layout="wide"
 )
 
-# ---------------- TITLE ----------------
+#  TITLE 
 st.title("World Population Intelligence Platform")
 
 st.markdown("""
