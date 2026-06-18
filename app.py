@@ -27,11 +27,10 @@ df = pd.read_csv(
     skiprows=4
 )
 
-st.write(df.head())
-st.write(df.columns)
-
 # Remove empty rows
 df = df.dropna(subset=["Country Name"])
+# Remove duplicate header row
+df = df[df["Country Name"] != "Country Name"]
 
 # ---------------- FIND LATEST YEAR ----------------
 year_columns = df.columns[4:]
@@ -169,9 +168,11 @@ country1 = st.selectbox(
     sorted(valid_df["Country Name"].unique()),
     key="c1"
 )
+countries = sorted(valid_df["Country Name"].unique())
+
 country2 = st.selectbox(
     "Country 2",
-    sorted(valid_df["Country Name"].unique()),
+    countries,
     index=0,
     key="c2"
 )
