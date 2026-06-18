@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
       - name: Wake Streamlit App
-        run: |
-          curl -L "https://world-population-intelligence-platform-gkzkctpfhfchtvzishoqnd.streamlit.app/"
+  run: |
+    curl -I "https://world-population-intelligence-platform-gzkzctpffhchtvzishoqnd.streamlit.app/"
     
