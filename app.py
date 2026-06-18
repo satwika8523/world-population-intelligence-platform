@@ -54,13 +54,16 @@ st.subheader("Key Statistics")
 total_countries = valid_df["Country Name"].nunique()
 world_population = valid_df[latest_year].sum()
 
-highest_country = valid_df.loc[
-    valid_df[latest_year].idxmax(),
+# Exclude World from country ranking
+country_df = valid_df[valid_df["Country Name"] != "World"]
+
+highest_country = country_df.loc[
+    country_df[latest_year].idxmax(),
     "Country Name"
 ]
 
-lowest_country = valid_df.loc[
-    valid_df[latest_year].idxmin(),
+lowest_country = country_df.loc[
+    country_df[latest_year].idxmin(),
     "Country Name"
 ]
 
