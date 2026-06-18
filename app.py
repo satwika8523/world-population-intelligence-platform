@@ -23,9 +23,12 @@ and visualize worldwide demographic changes through interactive charts.
 
 # LOAD DATA 
 df = pd.read_csv(
-    "API_SP.POP.TOTL_DS2_en_csv_v2_282912.csv",
+    "data/API_SP.POP.TOTL_DS2_en_csv_v2_282912.csv",
     skiprows=4
 )
+
+st.write(df.head())
+st.write(df.columns)
 
 # Remove empty rows
 df = df.dropna(subset=["Country Name"])
@@ -166,11 +169,10 @@ country1 = st.selectbox(
     sorted(valid_df["Country Name"].unique()),
     key="c1"
 )
-
 country2 = st.selectbox(
     "Country 2",
     sorted(valid_df["Country Name"].unique()),
-    index=1,
+    index=0,
     key="c2"
 )
 
