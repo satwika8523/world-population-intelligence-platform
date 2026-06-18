@@ -1,0 +1,15 @@
+name: Keep Streamlit App Warm
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  wake-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Wake Streamlit App
+        run: |
+          curl -L "https://world-population-intelligence-platform-gkzkctpffhchtvzishoqnd.streamlit.app/"
